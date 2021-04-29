@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+.header{
+    background: rgb(0,213,177);
+    color: white;
+    padding: 2% 3%;
+}
+
+.font-roboto{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.principal-title{
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.secundary-title{
+    font-size: 20px;
+    font-weight: 300;
+    transform: translateY(-17px);
+}
+
+.span-bold{
+    font-weight: bold;
+}
