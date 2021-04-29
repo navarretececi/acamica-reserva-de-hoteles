@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/acamica-reserva-de-hoteles/static/css/main.fb195e06.chunk.css",
+    "main.js": "/acamica-reserva-de-hoteles/static/js/main.7b3fbf0e.chunk.js",
+    "main.js.map": "/acamica-reserva-de-hoteles/static/js/main.7b3fbf0e.chunk.js.map",
+    "runtime-main.js": "/acamica-reserva-de-hoteles/static/js/runtime-main.cf5529a5.js",
+    "runtime-main.js.map": "/acamica-reserva-de-hoteles/static/js/runtime-main.cf5529a5.js.map",
+    "static/js/2.d17f6a4b.chunk.js": "/acamica-reserva-de-hoteles/static/js/2.d17f6a4b.chunk.js",
+    "static/js/2.d17f6a4b.chunk.js.map": "/acamica-reserva-de-hoteles/static/js/2.d17f6a4b.chunk.js.map",
+    "static/js/3.e258456e.chunk.js": "/acamica-reserva-de-hoteles/static/js/3.e258456e.chunk.js",
+    "static/js/3.e258456e.chunk.js.map": "/acamica-reserva-de-hoteles/static/js/3.e258456e.chunk.js.map",
+    "index.html": "/acamica-reserva-de-hoteles/index.html",
+    "static/css/main.fb195e06.chunk.css.map": "/acamica-reserva-de-hoteles/static/css/main.fb195e06.chunk.css.map",
+    "static/js/2.d17f6a4b.chunk.js.LICENSE.txt": "/acamica-reserva-de-hoteles/static/js/2.d17f6a4b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cf5529a5.js",
+    "static/js/2.d17f6a4b.chunk.js",
+    "static/css/main.fb195e06.chunk.css",
+    "static/js/main.7b3fbf0e.chunk.js"
+  ]
+}
