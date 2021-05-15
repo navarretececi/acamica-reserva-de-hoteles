@@ -8,26 +8,30 @@ a:active {
 }
 
 .footer{
-    background: rgb(0,213,177);
+    background: rgb(0,157,245);
     color: white;
-    padding: 1% 3%;
+    padding: 0.5% 3%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-.font-roboto{
+.font-roboto-footer{
     font-family: 'Roboto', sans-serif;
 }
 
-.texto-footer{
+.text-footer{
     flex:2;
+    justify-content: center;
+    display: flex;
 }
 
 .container-icono-footer{
     flex: 1;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 1% 0%;
 }
 
 .fab{
@@ -37,3 +41,15 @@ a:active {
     transform: scale(2, 2);
   }
 
+  @media only screen and (min-width: 768px) {
+    .footer{
+      display: flex;
+      flex-direction: row;
+    }
+
+    .text-footer{
+      justify-content: initial;
+      align-items: center;
+      display: flex;
+    }
+  }

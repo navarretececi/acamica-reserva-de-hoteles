@@ -3,15 +3,26 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     background: rgb(0,157,245);
     padding: 0.5% 3%;
 }
 
 .filter-box {
-border: none;
-height: 45px;
-flex: 1;
-margin: 0% 1%;
-border-radius: 5px;
-padding-left: 1%;
+    border: none;
+    height: 45px;
+    min-width: 122px;
+    flex: 1;
+    margin: 1% 1%;
+    border-radius: 5px;
+    padding-left: 1%;
+    background: white;
 }
+
+@media only screen and (min-width: 768px) {
+    .filter-box{
+        margin: 0% 1%;
+    }
+  }
+
+

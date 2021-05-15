@@ -1,30 +1,30 @@
-import "./Filter.css"
+import "./filter.css"
 
-export function Filter() {
+export function Filter(props) {
     return ( 
-        <div className = "filter" >
+        <nav className = "filter" >
             <input className="filter-box" type = "date" / >
             <input className="filter-box"  type = "date" / >
-            <select className="filter-box" name="country" >
+            <select value={props.country} onChange={props.handleCountry} className="filter-box" name="country" >
                 <option value = "all" > Todos los países </option> 
-                <option value = "ar" > Argentina </option> 
-                <option value = "br" > Brasil </option> 
-                <option value = "ch" > Chile </option> 
-                <option value = "ur" > Uruguay </option> 
+                <option value = "Argentina" > Argentina </option> 
+                <option value = "Brasil" > Brasil </option> 
+                <option value = "Chile" > Chile </option> 
+                <option value = "Uruguay" > Uruguay </option> 
             </select> 
-            <select className="filter-box" name="price">
+            <select value={props.price} onChange={props.handlePrice} className="filter-box" name="price">
                 <option value = "all" > Cualquier precio </option> 
                 <option value = "1" > $ </option> 
                 <option value = "2" > $$ </option> 
                 <option value = "3" > $$$ </option> 
                 <option value = "4" > $$$$ </option> 
             </select> 
-            <select className="filter-box" name="rooms">
+            <select value={props.size} onChange={props.handleSize}className="filter-box" name="rooms">
                 <option value = "all" > Cualquier tamaño </option> 
-                <option value = "1" > Chico </option> 
-                <option value = "2" > Mediano </option> 
-                <option value = "3" > Gramde </option> 
+                <option value = "Chico" > Chico </option> 
+                <option value = "Mediano" > Mediano </option> 
+                <option value = "Grande" > Grande </option> 
             </select> 
-        </div>
+        </nav>
     )
 }
