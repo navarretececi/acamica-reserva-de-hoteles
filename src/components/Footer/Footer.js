@@ -4,7 +4,7 @@ export function Footer(){
     return(
         <footer className="footer">
              <div className="text-footer font-roboto-footer">Copyright ©</div>
-            <div className="container-icono-footer">
+             <div className="container-icono-footer">
                 <a className="icono-footer" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-instagram"></i>
                 </a>

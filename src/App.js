@@ -3,36 +3,73 @@ import { Header } from './components/header/header';
 import { Filter } from './components/filter/filter';
 import { Card } from './components/card/card';
 import { Footer } from './components/footer/footer';
-import { hotelsData, today } from './components/data/data';
+import { hotelsData } from './components/data/data';
 import { useState } from 'react';
 
 
 function App() {
 
+const [dateFrom, setDateFrom] = useState("")
+const [dateTo, setDateTo] = useState("")
 const [country, setCountry] = useState("all")
-const [size, setSize] = useState("all")
 const [price, setPrice] = useState("all")
+const [size, setSize] = useState("all")
 
-console.log(price)
+function formatDate() {
+  var d = new Date(),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
 
-const handleCountry = (e) => setCountry(e.target.value)
-const handleSize = (e) => setSize(e.target.value)
-const handlePrice = (e) => setPrice(e.target.value)
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [year, month, day].join('-');
+}
+
+
+const handlerDateFrom = (e) => {
+  if (new Date (e.target.value) < new Date(formatDate())) {
+      alert(`La fecha no puede ser anterior al ${formatDate()}`)
+  } else if (dateTo && (new Date (e.target.value) > new Date(dateTo))) {
+    alert(`La fecha no puede ser posterior al ${dateTo}`)
+  } else {
+    setDateFrom(e.target.value)
+  }
+}
+
+const handlerDateTo = (e) => {
+  if (new Date (e.target.value) < new Date(formatDate())) {
+    alert(`La fecha no puede ser anterior al ${formatDate()}`)
+  } else if (dateFrom && (new Date (e.target.value) < new Date(dateFrom))) {
+    alert(`La fecha no puede ser anterior al ${dateFrom}`)
+  } else setDateTo(e.target.value)
+}
+
+const handlerCountry = (e) => setCountry(e.target.value)
+const handlerPrice = (e) => setPrice(e.target.value)
+const handlerSize = (e) => setSize(e.target.value)
+
 
 
 
 const filterHotelData = hotelsData.filter((hotel) => {
   return (country === "all" ? true : hotel.country === country) &&
-         (size === "all" ? true : 
-                              size === "Chico" ? hotel.rooms < 11 : 
-                              size === "Mediano" ? hotel.rooms > 10 && hotel.rooms < 21 : 
-                              hotel.rooms > 20
-         ) &&
          (price ==="all" ? true:
                                 price === "1" ? hotel.price === 1 :
                                 price === "2" ? hotel.price === 2 :
                                 price === "3" ? hotel.price === 3 :
-                                hotel.price === 4)
+                                hotel.price === 4) &&
+         (size === "all" ? true : 
+                                  size === "Chico" ? hotel.rooms < 11 : 
+                                  size === "Mediano" ? hotel.rooms > 10 && hotel.rooms < 21 : 
+                                  hotel.rooms > 20
+         ) &&
+         (!dateFrom ? true : hotel.availabilityFrom <= new Date(dateFrom).valueOf()) &&
+         (!dateTo ? true : hotel.availabilityTo >= new Date(dateTo).valueOf())
+         
          
       //   (
       //     if (size === "Chico"){ 
@@ -47,17 +84,37 @@ const filterHotelData = hotelsData.filter((hotel) => {
       //  )
 })
 
+// Te cree esto para que imprima en consola una tabla con las fechas, para que veas si el filtro esta ok 
+const log = []
+filterHotelData.map((hotel,index) =>
+      log.push( {"name:": hotel.name,
+                "availabilityFrom:": new Date(hotel.availabilityFrom),
+                "availabilityTo:": new Date(hotel.availabilityTo)}
+              )
+  )
+  console.table(log)
+// fin tabla de fechas
 
   return (
     <div className="App">
-     <Header />
-     <Filter 
+     <Header 
+     dateFrom={dateFrom}
+     dateTo={dateTo}
      country={country} 
-     handleCountry={handleCountry}
-     size={size}  
-     handleSize={handleSize}
      price={price}
-     handlePrice={handlePrice}
+     size={size}  
+     />
+     <Filter 
+     dateFrom={dateFrom}
+     handlerDateFrom={handlerDateFrom}
+     dateTo={dateTo}
+     handlerDateTo={handlerDateTo}
+     country={country} 
+     handlerCountry={handlerCountry}
+     price={price}
+     handlerPrice={handlerPrice}
+     size={size}  
+     handlerSize={handlerSize}
      /> 
      
     <div className="container-cards">

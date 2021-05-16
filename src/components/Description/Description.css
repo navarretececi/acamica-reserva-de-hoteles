@@ -1,23 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-.description{
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-row{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 1%;
+.padding-left-3{
+    padding: 0 3%;
 }
 
 .container-svg{
     background: rgb(0,157,245);
     border-radius: 8px 0 0 8px;
-    height: 25px;
+    height: 35px;
     width: 50px;
-    padding: 0.5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,20 +17,19 @@
 .detail{
     background: rgb(245,245,245);
     border-radius: 0 8px 8px 0;
-    height: 25px;
-    padding: 0.5%;
+    height: 35px;
     display: flex;
     align-items: center;
     font-size: 10px;
     font-family: 'Roboto', sans-serif;
     color: gray;
-}
-
-.container-price{
-    border-radius: 8px;
+    min-width: 90px;
+    width: 125px;
+    padding-left: 2%;
+    padding-right: 4%;
 }
 
 .svg {
-    height: 80%;
+    height: 60%;
     filter: invert(100%);
 }

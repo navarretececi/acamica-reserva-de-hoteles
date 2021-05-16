@@ -1,0 +1,15 @@
+.container-price{
+    border-radius: 8px;
+    border-radius: 8px;
+    width: 70px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dolar-white{
+    color: white
+}
+
+.dolar-grey{
+    color: rgb(43,181,248);
+}

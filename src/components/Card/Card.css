@@ -12,11 +12,6 @@
     width: 100%;
 }
 
-.font-roboto{
-    font-family: 'Roboto', sans-serif;
-    padding: 0 5%;
-}
-
 .description{
     color: gray;
 }
@@ -29,6 +24,13 @@
     font-weight: bolder;
     padding: 4% 0;
 }
+
+.description{
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 
 

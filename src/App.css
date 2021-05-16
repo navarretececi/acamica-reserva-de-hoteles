@@ -4,6 +4,22 @@
   padding: 0 2%;
 }
 
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.font-roboto{
+  font-family: 'Roboto', sans-serif;
+  padding: 0 3%;
+}
 
 .container-cards{
   display: flex;

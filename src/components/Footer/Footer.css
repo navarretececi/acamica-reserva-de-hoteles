@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-
-a:link,
-a:visited,
-a:active {
-  text-decoration: none;
-}
-
 .footer{
     background: rgb(0,157,245);
     color: white;

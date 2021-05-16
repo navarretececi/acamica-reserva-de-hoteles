@@ -1,5 +1,6 @@
 import "./card.css"
 import { Description } from "../description/description"
+import { Price } from "../btnPrice/btnPrice"
 
 
 export function Card(props){
@@ -13,14 +14,22 @@ export function Card(props){
             <img className="image" src={props.photo} alt="hotel" />
             <h2 className="font-roboto">{props.name}</h2>
             <p className="font-roboto description">{props.description}</p>
-            <Description
-            rooms= {props.rooms}
-            city={props.city}
-            country={props.country}
-            price={props.price}
-            />
+            
+            <div className="description">
+                <Description
+                image= "./images/location.svg"
+                description={`${props.city}, ${props.country}`}
+                />
+                <div className="flex-row width100">
+                    <Description
+                    image="./images/room.svg"
+                    description={`${props.rooms}, habitaciones`}
+                    />
+                    <Price price={props.price}/>
+                </div>
+            </div>
+
             <button onClick={reserve} className="btn-book font-roboto">Reservar</button>
         </section>
     )
 }
-
