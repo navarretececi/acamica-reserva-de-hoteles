@@ -92,15 +92,15 @@ const filterHotelData = hotelsData.filter((hotel) => {
       //  )
 })
 
-// Te cree esto para que imprima en consola una tabla con las fechas, para que veas si el filtro esta ok 
-const log = []
-filterHotelData.map((hotel,index) =>
-      log.push( {"name:": hotel.name,
-                "availabilityFrom:": new Date(hotel.availabilityFrom),
-                "availabilityTo:": new Date(hotel.availabilityTo)}
+// Tabla con las fechas disponibles de los hoteles
+const disponibilidad = []
+filterHotelData.map((hotel) =>
+    disponibilidad.push( {"nombre:": hotel.name,
+                   "desde:": new Date(hotel.availabilityFrom),
+                   "hasta:": new Date(hotel.availabilityTo)}
               )
   )
-  console.table(log)
+  console.table(disponibilidad)
 // fin tabla de fechas
 
   return (

@@ -6,6 +6,7 @@
     font-size: 12px;
     width: 100px;
     border: none;
+    background: white;
 }
 
 .container-btn-reset{
@@ -17,4 +18,5 @@
 .btn-reset:hover{
     color: white;
     background: red;
+    font-size: 14px;
 }

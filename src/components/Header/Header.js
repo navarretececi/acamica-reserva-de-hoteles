@@ -5,6 +5,39 @@ import { Reset } from "../btnReset/btnReset"
 
 export function Header(props){
 
+    function naturalDate(date) {
+        let d = new Date(date + " 00:00"),
+            month = d.getMonth(),
+            day = d.getDate(),
+            year = d.getFullYear();
+    
+        if (month === 0) {
+            month = "Enero"
+        } else if (month === 1){
+            month =  "Febrero"
+        } else if (month === 2){
+            month = "Marzo"
+        } else if (month === 3){
+            month = "Abril"
+        } else if (month === 4){
+            month = "Mayo"
+        } else if (month === 5){
+            month = "Junio"
+        } else if (month === 6){
+            month = "Julio"
+        } else if (month === 7){
+            month = "Agosto"
+        } else if (month === 8){
+            month = "Septiembre"
+        } else if (month === 9){
+            month = "Octubre"
+        } else if (month === 10){
+            month = "Noviembre"
+        } else  month = "Diciembre"
+    
+        return  `${day} de ${month} del ${year}`   
+    }
+
 return (
     <header className="header">
         <div className="flex-row">
@@ -16,8 +49,8 @@ return (
         <h2 className="font-roboto detail-header">{`Búsqueda para hoteles: 
         ${props.size === "all" ? "cualquier tamaño" : props.size}, 
         de precio ${props.price === "all" ? "indefinido" : `nivel: ${props.price}`}, 
-        desde el ${!props.dateFrom ? "___" : props.dateFrom} 
-        hasta el ${!props.dateTo ? "___" : props.dateTo} 
+        desde el ${!props.dateFrom ? "___" : naturalDate(props.dateFrom)} 
+        hasta el ${!props.dateTo ? "___" : naturalDate(props.dateTo)} 
         en ${props.country === "all" ? "todos los países" : props.country}`}</h2>
         
         <div className="flex-row container-description">
