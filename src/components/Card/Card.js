@@ -23,7 +23,7 @@ export function Card(props){
                 <div className="flex-row width100">
                     <Description
                     image="./images/room.svg"
-                    description={`${props.rooms}, habitaciones`}
+                    description={`${props.rooms} habitaciones`}
                     />
                     <Price price={props.price}/>
                 </div>

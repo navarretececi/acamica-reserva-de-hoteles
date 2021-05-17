@@ -52,6 +52,14 @@ const handlerCountry = (e) => setCountry(e.target.value)
 const handlerPrice = (e) => setPrice(e.target.value)
 const handlerSize = (e) => setSize(e.target.value)
 
+const handlerReset = () => {  
+      setDateFrom("")
+      setDateTo("")
+      setCountry("all")
+      setPrice("all")
+      setSize("all")
+}   
+
 
 
 
@@ -97,25 +105,27 @@ filterHotelData.map((hotel,index) =>
 
   return (
     <div className="App">
-     <Header 
-     dateFrom={dateFrom}
-     dateTo={dateTo}
-     country={country} 
-     price={price}
-     size={size}  
-     />
-     <Filter 
-     dateFrom={dateFrom}
-     handlerDateFrom={handlerDateFrom}
-     dateTo={dateTo}
-     handlerDateTo={handlerDateTo}
-     country={country} 
-     handlerCountry={handlerCountry}
-     price={price}
-     handlerPrice={handlerPrice}
-     size={size}  
-     handlerSize={handlerSize}
-     /> 
+        <Header 
+        dateFrom={dateFrom}
+        dateTo={dateTo}
+        country={country} 
+        price={price}
+        size={size}  
+        handlerReset={handlerReset}
+        />
+
+        <Filter 
+        dateFrom={dateFrom}
+        handlerDateFrom={handlerDateFrom}
+        dateTo={dateTo}
+        handlerDateTo={handlerDateTo}
+        country={country} 
+        handlerCountry={handlerCountry}
+        price={price}
+        handlerPrice={handlerPrice}
+        size={size}  
+        handlerSize={handlerSize}
+        /> 
      
     <div className="container-cards">
    

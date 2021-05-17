@@ -4,6 +4,7 @@
     width: 70px;
     display: flex;
     justify-content: space-evenly;
+    margin: 0 3%;
 }
 
 .dolar-white{
