@@ -71,8 +71,6 @@ const filterHotelData = hotelsData.filter((hotel) => {
                                   dateFrom ? hotel.availabilityFrom >= new Date(dateFrom).valueOf() &&
                                   hotel.availabilityFrom <= new Date(dateTo).valueOf() :
                                   dateTo ? hotel.availabilityTo <= new Date(dateTo).valueOf() : true)
-        
-         
       //   (
       //     if (size === "Chico"){ 
       //       hotel.rooms < 11
@@ -92,8 +90,10 @@ filterHotelData.map((hotel) =>
     disponibilidad.push( {"nombre:": hotel.name,
                    "desde:": new Date(hotel.availabilityFrom),
                    "hasta:": new Date(hotel.availabilityTo)}
-              )
+              ) 
   )
+
+
   console.table(disponibilidad)
 // fin tabla de fechas
 
@@ -123,19 +123,20 @@ filterHotelData.map((hotel) =>
      
     <div className="container-cards">
    
-   { 
-    filterHotelData.map((hotel,index) =>
-       <Card
-        key={index}
-        name={hotel.name}
-        photo={hotel.photo}
-        description={hotel.description}
-        rooms= {hotel.rooms}
-        city={hotel.city}
-        country={hotel.country}
-        price={hotel.price}
-       />
-     ) 
+   { (filterHotelData.length > 0 ?
+                                  filterHotelData.map((hotel,index) =>
+                                    <Card
+                                      key={index}
+                                      name={hotel.name}
+                                      photo={hotel.photo}
+                                      description={hotel.description}
+                                      rooms= {hotel.rooms}
+                                      city={hotel.city}
+                                      country={hotel.country}
+                                      price={hotel.price}
+                                    />
+                                  ):
+                                  <div>NO RESULTADOS</div>)
     }
     </div>
     
