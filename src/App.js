@@ -68,20 +68,11 @@ const filterHotelData = hotelsData.filter((hotel) => {
                                   size === "Mediano" ? hotel.rooms > 10 && hotel.rooms < 21 : 
                                   hotel.rooms > 20) &&
         (!dateFrom || !dateTo ? true:
-                                  dateFrom ? hotel.availabilityFrom >= new Date(dateFrom).valueOf() &&
-                                  hotel.availabilityFrom <= new Date(dateTo).valueOf() :
-                                  dateTo ? hotel.availabilityTo <= new Date(dateTo).valueOf() : true)
-      //   (
-      //     if (size === "Chico"){ 
-      //       hotel.rooms < 11
-      //     } else if (size === "Mediano"){
-      //       hotel.rooms > 10 && hotel.rooms < 21
-      //     } else if (size === "Grande") {
-      //       hotel.rooms >= 21
-      //     } else {
-      //       true
-      //     }
-      //  )
+          hotel.availabilityFrom <= new Date(dateFrom).valueOf() &&
+          hotel.availabilityTo >= new Date(dateFrom).valueOf() &&
+          hotel.availabilityFrom <= new Date(dateTo).valueOf() &&
+          hotel.availabilityTo >= new Date(dateTo).valueOf() 
+          )
 })
 
 // Tabla con las fechas disponibles de los hoteles
@@ -92,7 +83,6 @@ filterHotelData.map((hotel) =>
                    "hasta:": new Date(hotel.availabilityTo)}
               ) 
   )
-
 
   console.table(disponibilidad)
 // fin tabla de fechas
@@ -136,7 +126,14 @@ filterHotelData.map((hotel) =>
                                       price={hotel.price}
                                     />
                                   ):
-                                  <div>NO RESULTADOS</div>)
+                                  <div className="container-no-result">
+                                    <h2 className="font-roboto">Lo sentimos</h2>
+                                    <p className="font-roboto">No hemos encontrado resultados coincidentes con los filtros aplicados. 
+                                      <br/>
+                                      Le sugerimos realizar una nueva busqueda aplicando otros parámetros.
+                                      <br/><br/>
+                                      Para inicializar una nueva busqueda debe limpiar los filtros preexistentes</p>
+                                  </div>)
     }
     </div>
     
