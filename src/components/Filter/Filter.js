@@ -4,8 +4,8 @@ export function Filter(props) {
 
     return ( 
         <nav className = "filter" >
-            <input value={props.dateFrom} onChange={props.handlerDateFrom} className="filter-box" type ="date" / >
-            <input value={props.dateTo} onChange={props.handlerDateTo} className="filter-box"  type ="date" / >
+            <input value={props.dateFrom} onChange={props.handlerDateFrom} className="filter-box" type ="date" />
+            <input value={props.dateTo} onChange={props.handlerDateTo} className="filter-box"  type ="date" />
             <select value={props.country} onChange={props.handlerCountry} className="filter-box" name="country" >
                 <option value = "all" > Todos los países </option> 
                 <option value = "Argentina" > Argentina </option> 
