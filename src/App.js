@@ -29,7 +29,6 @@ function formatDate() {
   return [year, month, day].join('-');
 }
 
-
 const handlerDateFrom = (e) => {
   if (new Date (e.target.value) < new Date(formatDate())) {
       alert(`La fecha no puede ser anterior al ${formatDate()}`)
@@ -39,7 +38,6 @@ const handlerDateFrom = (e) => {
     setDateFrom(e.target.value)
   }
 }
-
 const handlerDateTo = (e) => {
   if (new Date (e.target.value) < new Date(formatDate())) {
     alert(`La fecha no puede ser anterior al ${formatDate()}`)
@@ -47,11 +45,9 @@ const handlerDateTo = (e) => {
     alert(`La fecha no puede ser anterior al ${dateFrom}`)
   } else setDateTo(e.target.value)
 }
-
 const handlerCountry = (e) => setCountry(e.target.value)
 const handlerPrice = (e) => setPrice(e.target.value)
 const handlerSize = (e) => setSize(e.target.value)
-
 const handlerReset = () => {  
       setDateFrom("")
       setDateTo("")
@@ -59,9 +55,6 @@ const handlerReset = () => {
       setPrice("all")
       setSize("all")
 }   
-
-
-
 
 const filterHotelData = hotelsData.filter((hotel) => {
   return (country === "all" ? true : hotel.country === country) &&
@@ -73,11 +66,12 @@ const filterHotelData = hotelsData.filter((hotel) => {
          (size === "all" ? true : 
                                   size === "Chico" ? hotel.rooms < 11 : 
                                   size === "Mediano" ? hotel.rooms > 10 && hotel.rooms < 21 : 
-                                  hotel.rooms > 20
-         ) &&
-         (!dateFrom ? true : hotel.availabilityFrom <= new Date(dateFrom).valueOf()) &&
-         (!dateTo ? true : hotel.availabilityTo >= new Date(dateTo).valueOf())
-         
+                                  hotel.rooms > 20) &&
+        (!dateFrom || !dateTo ? true:
+                                  dateFrom ? hotel.availabilityFrom >= new Date(dateFrom).valueOf() &&
+                                  hotel.availabilityFrom <= new Date(dateTo).valueOf() :
+                                  dateTo ? hotel.availabilityTo <= new Date(dateTo).valueOf() : true)
+        
          
       //   (
       //     if (size === "Chico"){ 
