@@ -110,7 +110,6 @@ filterHotelData.map((hotel) =>
         size={size}  
         handlerSize={handlerSize}
         /> 
-     
     <div className="container-cards">
    
    { (filterHotelData.length > 0 ?
