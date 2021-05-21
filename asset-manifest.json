@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.ab80d9e5.chunk.css",
-    "main.js": "/static/js/main.0f0602d8.chunk.js",
-    "main.js.map": "/static/js/main.0f0602d8.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8c897474.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8c897474.js.map",
-    "static/js/2.300bda8e.chunk.js": "/static/js/2.300bda8e.chunk.js",
-    "static/js/2.300bda8e.chunk.js.map": "/static/js/2.300bda8e.chunk.js.map",
-    "static/js/3.45a9661c.chunk.js": "/static/js/3.45a9661c.chunk.js",
-    "static/js/3.45a9661c.chunk.js.map": "/static/js/3.45a9661c.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.ab80d9e5.chunk.css.map": "/static/css/main.ab80d9e5.chunk.css.map",
-    "static/js/2.300bda8e.chunk.js.LICENSE.txt": "/static/js/2.300bda8e.chunk.js.LICENSE.txt"
+    "main.css": "/acamica-reserva-de-hoteles/static/css/main.ab80d9e5.chunk.css",
+    "main.js": "/acamica-reserva-de-hoteles/static/js/main.0f0602d8.chunk.js",
+    "main.js.map": "/acamica-reserva-de-hoteles/static/js/main.0f0602d8.chunk.js.map",
+    "runtime-main.js": "/acamica-reserva-de-hoteles/static/js/runtime-main.94e1d126.js",
+    "runtime-main.js.map": "/acamica-reserva-de-hoteles/static/js/runtime-main.94e1d126.js.map",
+    "static/js/2.300bda8e.chunk.js": "/acamica-reserva-de-hoteles/static/js/2.300bda8e.chunk.js",
+    "static/js/2.300bda8e.chunk.js.map": "/acamica-reserva-de-hoteles/static/js/2.300bda8e.chunk.js.map",
+    "static/js/3.45a9661c.chunk.js": "/acamica-reserva-de-hoteles/static/js/3.45a9661c.chunk.js",
+    "static/js/3.45a9661c.chunk.js.map": "/acamica-reserva-de-hoteles/static/js/3.45a9661c.chunk.js.map",
+    "index.html": "/acamica-reserva-de-hoteles/index.html",
+    "static/css/main.ab80d9e5.chunk.css.map": "/acamica-reserva-de-hoteles/static/css/main.ab80d9e5.chunk.css.map",
+    "static/js/2.300bda8e.chunk.js.LICENSE.txt": "/acamica-reserva-de-hoteles/static/js/2.300bda8e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8c897474.js",
+    "static/js/runtime-main.94e1d126.js",
     "static/js/2.300bda8e.chunk.js",
     "static/css/main.ab80d9e5.chunk.css",
     "static/js/main.0f0602d8.chunk.js"
