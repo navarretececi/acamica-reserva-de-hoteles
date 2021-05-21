@@ -4,7 +4,7 @@ import { Filter } from './components/filter/filter';
 import { Card } from './components/card/card';
 import { Footer } from './components/footer/footer';
 import { hotelsData } from './components/data/data';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function App() {
@@ -14,6 +14,7 @@ const [dateTo, setDateTo] = useState("")
 const [country, setCountry] = useState("all")
 const [price, setPrice] = useState("all")
 const [size, setSize] = useState("all")
+const [filterHotelData, setFilterHotelData] = useState([])
 
 function formatDate() {
   var d = new Date(),
@@ -56,36 +57,31 @@ const handlerReset = () => {
       setSize("all")
 }   
 
-const filterHotelData = hotelsData.filter((hotel) => {
-  return (country === "all" ? true : hotel.country === country) &&
-         (price ==="all" ? true:
-                                price === "1" ? hotel.price === 1 :
-                                price === "2" ? hotel.price === 2 :
-                                price === "3" ? hotel.price === 3 :
-                                hotel.price === 4) &&
-         (size === "all" ? true : 
-                                  size === "Chico" ? hotel.rooms < 11 : 
-                                  size === "Mediano" ? hotel.rooms > 10 && hotel.rooms < 21 : 
-                                  hotel.rooms > 20) &&
-        (!dateFrom || !dateTo ? true:
-          hotel.availabilityFrom <= new Date(dateFrom).valueOf() &&
-          hotel.availabilityTo >= new Date(dateFrom).valueOf() &&
-          hotel.availabilityFrom <= new Date(dateTo).valueOf() &&
-          hotel.availabilityTo >= new Date(dateTo).valueOf() 
-          )
-})
+useEffect (() => {
+  const filterByCountry = (hotel) => (country === "all" ? true : hotel.country === country);
 
-// Tabla con las fechas disponibles de los hoteles
-const disponibilidad = []
-filterHotelData.map((hotel) =>
-    disponibilidad.push( {"nombre:": hotel.name,
-                   "desde:": new Date(hotel.availabilityFrom),
-                   "hasta:": new Date(hotel.availabilityTo)}
-              ) 
-  )
+  const filterByPrice = (hotel) => (price ==="all" ? true:
+                                              price === "1" ? hotel.price === 1 :
+                                              price === "2" ? hotel.price === 2 :
+                                              price === "3" ? hotel.price === 3 :
+                                              hotel.price === 4);
+  const filterBySize = (hotel) =>(size === "all" ? true : 
+                                              size === "Chico" ? hotel.rooms < 11 : 
+                                              size === "Mediano" ? hotel.rooms > 10 && hotel.rooms < 21 : 
+                                              hotel.rooms > 20);
+  const filterByDate = (hotel) =>(!dateFrom || !dateTo ? true:
+                                                    hotel.availabilityFrom <= new Date(dateFrom).valueOf() &&
+                                                    hotel.availabilityTo >= new Date(dateFrom).valueOf() &&
+                                                    hotel.availabilityFrom <= new Date(dateTo).valueOf() &&
+                                                    hotel.availabilityTo >= new Date(dateTo).valueOf() 
+                                                    );
 
-  console.table(disponibilidad)
-// fin tabla de fechas
+  const filterHotel = hotelsData.filter((hotel) => {
+    return filterByCountry(hotel) && filterByPrice(hotel) && filterBySize(hotel) && filterByDate(hotel)
+  })
+  
+  setFilterHotelData(filterHotel)
+}, [country, price, size,dateFrom, dateTo])
 
   return (
     <div className="App">

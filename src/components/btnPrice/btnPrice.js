@@ -3,46 +3,18 @@ import "./btnPrice.css"
 export function Price(props){
     return(
         <div className="container-svg container-price">
-            {
-                props.price === "1" || props.price === 1 ? 
-                <>
-                    <i className="price dolar-white fas fa-dollar-sign"></i>
-                    <i className="dolar-grey fas fa-dollar-sign"></i>
-                    <i className="dolar-grey fas fa-dollar-sign"></i>
-                    <i className="dolar-grey fas fa-dollar-sign"></i>
-               </>
-                : ""
-            }
-            {
-                props.price === "2" || props.price === 2 ? 
-                <>
-                    <i className="price dolar-white fas fa-dollar-sign"></i>
-                    <i className="price dolar-white fas fa-dollar-sign"></i>
-                    <i className="dolar-grey fas fa-dollar-sign"></i>
-                    <i className="dolar-grey fas fa-dollar-sign"></i>
-                </>
-                    : ""
-            } 
-            {
-                props.price === "3" || props.price === 3 ? 
-                <>
-                    <i className="price dolar-white fas fa-dollar-sign"></i>
-                    <i className="price dolar-white fas fa-dollar-sign"></i>
-                    <i className="price dolar-white fas fa-dollar-sign"></i>
-                    <i className="dolar-grey fas fa-dollar-sign"></i>
-                </>
-                    : ""
-            }
-              {
-                props.price === "4" || props.price === 4 ? 
-                <>
-                    <i className="price dolar-white fas fa-dollar-sign"></i>
-                    <i className="price dolar-white fas fa-dollar-sign"></i>
-                    <i className="price dolar-white fas fa-dollar-sign"></i>
-                    <i className="price dolar-white fas fa-dollar-sign"></i>
-                </>
-                    : ""
+            { 
+                (()=> {
+                    let p = []
+                    for (let i = 1; i < 5; i++){
+                            (i<= props.price ? 
+                                p.push(<i key={i} className="price dolar-white fas fa-dollar-sign"></i>) :
+                                p.push(<i key={i} className="dolar-grey fas fa-dollar-sign"></i>))
+                    }
+                    return p           
+                })()
             }
         </div>     
     );
 }
+
