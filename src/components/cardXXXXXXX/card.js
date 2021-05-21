@@ -1,5 +1,5 @@
 import "./card.css"
-import { Description } from "../description/description"
+import { Description } from "../descriptionXXXXXX/description"
 import { Price } from "../btnPrice/btnPrice"
 
 

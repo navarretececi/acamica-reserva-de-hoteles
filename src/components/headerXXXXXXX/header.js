@@ -1,7 +1,7 @@
 import './header.css';
-import { Description } from "../description/description"
+import { Description } from "../descriptionXXXXXX/description"
 import { Price } from "../btnPrice/btnPrice"
-import { Reset } from "../btnReset/btnReset"
+import { Reset } from "../btnResetXXXXXX/btnReset"
 
 export function Header(props){
 

@@ -1,8 +1,8 @@
 import './App.css';
-import { Header } from './components/header/header';
-import { Filter } from './components/filter/filter';
-import { Card } from './components/card/card';
-import { Footer } from './components/footer/footer';
+import { Header } from './components/headerXXXXXXX/header';
+import { Filter } from './components/filterXXXXXXX/filter';
+import { Card } from './components/cardXXXXXXX/card';
+import { Footer } from './components/footerXXXXXXX/footer';
 import { hotelsData } from './components/data/data';
 import { useState } from 'react';
 
