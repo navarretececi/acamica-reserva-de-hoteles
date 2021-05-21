@@ -14,7 +14,7 @@
 }
 
 .text-footer{
-    flex:2;
+    flex:4;
     justify-content: center;
     display: flex;
 }
@@ -44,5 +44,9 @@
       justify-content: initial;
       align-items: center;
       display: flex;
+    }
+
+    .container-icono-footer{
+      justify-content: space-around;
     }
   }
