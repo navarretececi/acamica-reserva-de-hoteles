@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "./images/logo-hotel.svg",
+      "src": "./images/logo-hotel.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "./images/logo-hotel.svg",
+      "src": "./images/logo-hotel.png",
       "type": "image/png",
       "sizes": "512x512"
     }
