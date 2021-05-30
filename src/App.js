@@ -81,7 +81,7 @@ useEffect (() => {
   })
   
   setFilterHotelData(filterHotel)
-}, [country, price, size,dateFrom, dateTo])
+}, [country, price, size, dateFrom, dateTo])
 
   return (
     <div className="App">
