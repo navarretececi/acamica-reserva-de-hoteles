@@ -1,6 +1,5 @@
 {
   "name": "reserva_de_hoteles",
-  "homepage":"https://navarretececi.github.io/acamica-reserva-de-hoteles/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
