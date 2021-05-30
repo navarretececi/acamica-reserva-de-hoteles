@@ -3,7 +3,7 @@ import { Header } from './components/header/header';
 import { Filter } from './components/filter/filter';
 import { Card } from './components/card/card';
 import { Footer } from './components/footer/footer';
-import { hotelsData } from './components/Data/data';
+import { hotelsData } from './Data/data';
 import { useState, useEffect } from 'react';
 
 
